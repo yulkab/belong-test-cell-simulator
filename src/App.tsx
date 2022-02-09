@@ -1,6 +1,6 @@
 import { useCallback, useState } from 'react';
 import produce from 'immer';
-
+import Button from "./components/Button";
 const ROWS = 20;
 const COLS = 40;
 
@@ -76,13 +76,13 @@ function App() {
                 style={{
                   width: BOARD_WIDTH,
                   height: BOARD_HEIGHT,
-                  backgroundColor: grid[y][x] ? '#35b1e4' : undefined,                  
+                  backgroundColor: grid[y][x] ? '#35b1e4' : undefined,
                 }} />))}
         </div>
         
         <div>
-          <button className='btn' onClick={runSimulator}>  Next Generation </button>
-          <button className='btn' onClick={resetBoard}> Reset </button>
+        <Button onClick={runSimulator} title={'Next Generation'}/>
+        <Button onClick={resetBoard} title={'Reset'}/>
         </div>
 
     </div>
